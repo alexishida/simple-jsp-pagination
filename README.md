@@ -43,7 +43,8 @@ More information see a example in this git.
 
 	  paginacao.setPaginaAtual(paginaAtual);
 	  out.write(paginacao.paginacaoNumerica());
-
+	  // Or
+	  out.write(paginacao.paginacaoProximaAnterior());
 	%>
 	
 	

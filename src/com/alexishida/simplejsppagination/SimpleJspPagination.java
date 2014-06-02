@@ -1,9 +1,10 @@
-
+﻿
  /*
  *  Classe de paginação para ser usada com o Bootstrap 3.0
  *  Autor: Alex Ishida 
  *  Data: 02/06/2014
  *  Versão: 1.0
+ *  GitHub: https://github.com/alexishida/simple-jsp-pagination/ 
  * 
  *  Exemplo de uso dentro de uma pagina JSP
        <% 

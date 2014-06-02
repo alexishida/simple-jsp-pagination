@@ -45,3 +45,9 @@ More information see a example in this git.
 	  out.write(paginacao.paginacaoNumerica());
 
 	%>
+	
+	
+Imagem
+-----	
+
+http://i58.tinypic.com/5cztkp.jpg

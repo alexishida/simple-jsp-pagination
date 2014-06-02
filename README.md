@@ -49,5 +49,4 @@ More information see a example in this git.
 	
 Imagem
 -----	
-
-http://i58.tinypic.com/5cztkp.jpg
+![Example](http://oi58.tinypic.com/5cztkp.jpg "Example")

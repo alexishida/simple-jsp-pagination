@@ -1,4 +1,5 @@
-<%@page import="com.alexishida.simplejsppagination.SimpleJspPagination"%>
+
+<%@page import="com.alexishida.SimpleJspPagination"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 
@@ -63,7 +64,7 @@
             
             <br/>
             
-            <h2 class="page-header">Exemplo 1 - Paginação Próximo e Anterior</h2>
+            <h2 class="page-header">Exemplo 2 - Paginação Próximo e Anterior</h2>
             <div class="highlight">
                 <pre>
                       <code class="html">

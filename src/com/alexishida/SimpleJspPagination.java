@@ -1,4 +1,5 @@
-﻿
+package com.alexishida;
+
  /*
  *  Classe de paginação para ser usada com o Bootstrap 3.0
  *  Autor: Alex Ishida 
@@ -26,7 +27,6 @@
     %>   
  
  */
-package com.alexishida.simplejsppagination;
 
 
 public class SimpleJspPagination {

@@ -5,9 +5,10 @@
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
             <name>jsp-pagination</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
+            <explicit-platform explicit-source-supported="true"/>
             <web-module-libraries>
                 <library dirs="200">
-                    <file>${file.reference.SimpleJspPagination.jar}</file>
+                    <file>${file.reference.simple-jsp-pagination.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>

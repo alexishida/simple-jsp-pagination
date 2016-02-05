@@ -1,7 +1,7 @@
-A simple pagination in JSP (JAVA)
+Simple JSP (JAVA) pagination
 =============
 
-A simple java class for paginating a JSP using a Bootstrap 3.
+Simple java class for paginating JSP using Bootstrap 3.
 
 
 Installation

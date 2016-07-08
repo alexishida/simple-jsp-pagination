@@ -3,8 +3,8 @@ package com.alexishida;
  /*
  *  Classe de paginação para ser usada com o Bootstrap 3.0
  *  Autor: Alex Ishida 
- *  Data: 02/06/2014
- *  Versão: 1.0
+ *  Data: 08/07/2016
+ *  Versão: 1.0.1
  *  GitHub: https://github.com/alexishida/simple-jsp-pagination/ 
  * 
  *  Exemplo de uso dentro de uma pagina JSP
@@ -15,6 +15,7 @@ package com.alexishida;
             paginacao.setTotalPorPagina(10); // Total de registros por página (Não obrigatorio)
             paginacao.setClassesCSS("pagination-sm"); // coloca uma classe de estilo dentro da ul (Não obrigatorio)
             paginacao.setUrl("noticias.jsp");
+            paginacao.setParametros("&parametro1=parametro&parametro2=parametro");
 
             // Se não tiver a pagina no get seta 1 para pagina
             String paginaAtual = "1";
@@ -39,6 +40,7 @@ public class SimpleJspPagination {
     private int paginaAtual = 1;
     private String classesCSS = "";
     private String url = "#";
+    private String parametros = ""; 
 
     
     public int getTotalRegistros() {
@@ -85,6 +87,16 @@ public class SimpleJspPagination {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    public String getParametros() {
+        return parametros;
+    }
+
+    public void setParametros(String parametros) {
+        this.parametros = parametros;
+    }
+    
+    
     
     
     public String paginacaoNumerica()
@@ -135,7 +147,7 @@ public class SimpleJspPagination {
      private String botaoPrimeira() {
          String retorno = "";
          String desativada = "";
-         String url = this.getUrl()+"?pagina=1";
+         String url = this.getUrl()+"?pagina=1"+getParametros();
          
          if(this.getPaginaAtual() <= 1) {
             desativada = "class=\"disabled\"";
@@ -154,7 +166,7 @@ public class SimpleJspPagination {
          
          if(this.getPaginaAtual() <= 1) {
             desativada = "class=\"disabled\"";
-            url = this.getUrl()+"?pagina=1";
+            url = this.getUrl()+"?pagina=1"+getParametros();
          }
          else {
             int paginaAnterior = this.getPaginaAtual()-1; 
@@ -177,7 +189,7 @@ public class SimpleJspPagination {
        {
             for(int total=1;total<=totalDePaginas;total++)
             {
-                    url = this.getUrl()+"?pagina="+total;
+                    url = this.getUrl()+"?pagina="+total+getParametros();
                     
                     if(total == this.getPaginaAtual())
                     {
@@ -224,7 +236,7 @@ public class SimpleJspPagination {
               if(total>=1)
               {
                
-                   url = this.getUrl()+"?pagina="+total;
+                   url = this.getUrl()+"?pagina="+total+getParametros();
                    retorno = retorno + " <li><a href=\""+url+"\">"+total+"</a></li>\n";
               }
               
@@ -232,7 +244,7 @@ public class SimpleJspPagination {
     
             
             
-              url = this.getUrl()+"?pagina="+this.getPaginaAtual();
+              url = this.getUrl()+"?pagina="+this.getPaginaAtual()+getParametros();
               retorno = retorno + " <li class=\"active\"><a href=\""+url+"\">"+this.getPaginaAtual()+"</a></li>\n";
             
 
@@ -241,7 +253,7 @@ public class SimpleJspPagination {
                if(total<=totalDePaginas)
                {
                
-                   url = this.getUrl()+"?pagina="+total;
+                   url = this.getUrl()+"?pagina="+total+getParametros();
                    retorno = retorno + " <li><a href=\""+url+"\">"+total+"</a></li>\n";
                }
 
@@ -260,11 +272,11 @@ public class SimpleJspPagination {
          
          if(this.getPaginaAtual() == totalDePaginas) {
             desativada = "class=\"disabled\"";
-            url = this.getUrl()+"?pagina="+totalDePaginas;
+            url = this.getUrl()+"?pagina="+totalDePaginas+getParametros();
          } 
          else {
              int paginaProxima = this.getPaginaAtual()+1;
-             url = this.getUrl()+"?pagina="+paginaProxima;
+             url = this.getUrl()+"?pagina="+paginaProxima+getParametros();
          }
          retorno = "<li "+desativada+" ><a href=\""+url+"\">»</a></li>\n";
 
@@ -274,7 +286,7 @@ public class SimpleJspPagination {
      private String botaoUltima() {
          String retorno = "";
          String desativada = "";
-         String url = this.getUrl()+"?pagina="+totalDePaginas;
+         String url = this.getUrl()+"?pagina="+totalDePaginas+getParametros();
          
          if(this.getPaginaAtual() == totalDePaginas) {
             desativada = "class=\"disabled\"";
@@ -296,7 +308,7 @@ public class SimpleJspPagination {
          } 
          else {
              int paginaProxima = this.getPaginaAtual()+1;
-             url = this.getUrl()+"?pagina="+paginaProxima;
+             url = this.getUrl()+"?pagina="+paginaProxima+getParametros();
          }
          retorno = "<li "+desativada+" ><a href=\""+url+"\">Próxima »</a></li>\n";
 
@@ -311,11 +323,11 @@ public class SimpleJspPagination {
          
          if(this.getPaginaAtual() <= 1) {
             desativada = "class=\"disabled\"";
-            url = this.getUrl()+"?pagina=1";
+            url = this.getUrl()+"?pagina=1"+getParametros();
          }
          else {
             int paginaAnterior = this.getPaginaAtual()-1; 
-            url = this.getUrl()+"?pagina="+paginaAnterior;
+            url = this.getUrl()+"?pagina="+paginaAnterior+getParametros();
          }
          
          retorno = "<li "+desativada+" ><a href=\""+url+"\">« Anterior</a></li>\n";
@@ -339,7 +351,7 @@ public class SimpleJspPagination {
          retorno[1] = paginaAtual*totalPorPagina;
          
          
-         System.out.println(retorno[0] + " " + retorno[1]);
+        // System.out.println(retorno[0] + " " + retorno[1]);
          return retorno;
      }
      
